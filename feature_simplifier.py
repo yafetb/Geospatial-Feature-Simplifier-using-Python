@@ -42,7 +42,6 @@ def angleChange(lon, lat,  next_lon, next_lat,  prev_lon, prev_lat):
         angle_diff=360-angle_diff
     return angle_diff
 
-
 varlist = []
 import time
 numboffeatures = 0
@@ -87,7 +86,6 @@ def optimizer(feature_coord, get_quantiles):
         print('Number of features analysed : ' + str(numboffeatures), end = '\r')
         time.sleep(0.0002)
 
-
 def processOptimization(features, get_quantiles):        
     for items in features:
         if not get_quantiles:
@@ -114,7 +112,6 @@ processOptimization(features, False)
 print("Number of features : "+ str(numboffeatures)+", Coordinates Count: " + str(total_coordinates) + ",  Affected Coordinates: " + str(affected_coord))
 percent_affected = round((affected_coord/total_coordinates)*100, 1)
 print(str(percent_affected) + '% of coordinate points are affected.')
-
 
 with open(new_file_name, 'w') as f:
     geojson.dump(data, f)
