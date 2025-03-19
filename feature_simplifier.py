@@ -12,9 +12,8 @@ elif geojson_file[-8:] != '.geojson':
 
 new_file_name =  'simplified_'+geojson_file
 
-
 var_quantile = input("Enter the level of simplification from 0 to 1 :")
-tolerance_value = 0.1   #will be replaced by calculation from quantiles
+tolerance_value = 0.2   #will be replaced by calculation from quantiles
 
 
 if os.path.isfile(geojson_file):
@@ -57,7 +56,6 @@ def optimizer(feature_coord, get_quantiles):
     if not get_quantiles:
         numboffeatures += 1 
         total_coordinates += coodlength
-
     scanspot=coodlength-2  # the last item in the array should not be touched
     
     while (scanspot > 0):           # effectivly excludes the first index       
